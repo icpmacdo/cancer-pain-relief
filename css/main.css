@@ -87,6 +87,9 @@ html {
   --color-accent: #000000;
   --color-accent-hover: #555555;
 
+  /* Single subtle accent — used for the section-mapping "Build" status */
+  --map-accent: #2f6e63;
+
   /* Typography */
   --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
@@ -106,7 +109,7 @@ html {
   --transition: 0.3s ease-out;
 
   /* Reading column */
-  --measure: 960px;
+  --measure: 1120px;
 }
 
 /* ============================================
@@ -225,10 +228,8 @@ header nav ul li a:hover {
 }
 
 .markdown-body h2 {
-  font-size: 2rem;
-  margin: 3rem 0 1rem 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-border);
+  font-size: 1.625rem;
+  margin: 2.25rem 0;
 }
 
 .markdown-body h3 {
@@ -352,6 +353,52 @@ header nav ul li a:hover {
 .markdown-body th {
   background: #f0f0f0;
   font-weight: 600;
+}
+
+/* ============================================
+   INDEX + SECTION MAPPING
+   ============================================ */
+
+.markdown-body .idx {
+  margin: 3rem 0 6rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.markdown-body .idx-item {
+  display: block;
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.05rem 0.25rem;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.markdown-body .idx-item:hover {
+  color: var(--map-accent);
+}
+
+.markdown-body .mapping-section {
+  margin: 7rem 0 0 0;
+  scroll-margin-top: 3rem;
+}
+
+.markdown-body .mapping-section + .mapping-section {
+  margin-top: 8rem;
+}
+
+.markdown-body .mapping-section h2 {
+  margin: 0 0 1.75rem 0;
+}
+
+.markdown-body .mapping-section p {
+  max-width: 960px;
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.85;
 }
 
 /* Loading / error status */
