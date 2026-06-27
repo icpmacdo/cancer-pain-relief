@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Cancer Pain Relief — a working document.">
+	<meta name="author" content="Ian MacDonald">
+
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:title" content="Cancer Pain Relief">
+	<meta property="og:description" content="Cancer Pain Relief — a working document.">
+	<meta property="og:type" content="article">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/main.css">
+	<title>Cancer Pain Relief</title>
+</head>
+
+<body>
+	<!-- Paper grain texture overlay -->
+	<svg style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:0.025">
+		<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter>
+		<rect width="100%" height="100%" filter="url(#grain)"/>
+	</svg>
+
+	<div id="content">
+		<article id="doc" class="markdown-body" aria-busy="true">
+			<p class="doc-status">Loading…</p>
+		</article>
+	</div>
+
+	<!-- Scroll to Top Button -->
+	<button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top" title="Back to top">
+		<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+			<path d="M10 5l-7 7 1.5 1.5L10 8l5.5 5.5L17 12z" />
+		</svg>
+	</button>
+
+	<!-- Markdown renderer -->
+	<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+	<script src="js/script.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,507 @@
+/* ============================================
+   RESET & BASE
+   ============================================ */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+code,
+em,
+img,
+strong,
+ol,
+ul,
+li,
+table,
+thead,
+tbody,
+tr,
+th,
+td,
+article,
+figure,
+figcaption,
+footer,
+header,
+nav,
+section,
+hr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   CSS VARIABLES — Design tokens
+   ============================================ */
+
+:root {
+  /* Black & white palette */
+  --color-cream: #ffffff;
+  --color-warm-white: #ffffff;
+  --color-pencil: #000000;
+  --color-pencil-light: #555555;
+  --color-pencil-faint: #cccccc;
+
+  /* Semantic aliases */
+  --color-bg: var(--color-cream);
+  --color-surface: var(--color-warm-white);
+  --color-text: var(--color-pencil);
+  --color-text-secondary: var(--color-pencil-light);
+  --color-text-muted: var(--color-pencil-faint);
+  --color-border: var(--color-pencil-faint);
+  --color-accent: #000000;
+  --color-accent-hover: #555555;
+
+  /* Typography */
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  /* Spacing (8px grid) */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+
+  /* Radii — squared off */
+  --radius-card: 0;
+
+  --transition: 0.3s ease-out;
+
+  /* Reading column */
+  --measure: 960px;
+}
+
+/* ============================================
+   BASE TYPOGRAPHY
+   ============================================ */
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background: var(--color-surface);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--color-border);
+}
+
+#logo-container #logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+#logo-container #logo a {
+  color: var(--color-text);
+}
+
+#logo-container #logo a:hover {
+  color: var(--color-accent-hover);
+}
+
+#logo-container #subtitle {
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  margin-top: 0.25rem;
+}
+
+header nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+header nav ul li a {
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+header nav ul li a:hover {
+  color: var(--color-accent);
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+
+#content {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: var(--spacing-2xl) 2rem var(--spacing-xl) 2rem;
+}
+
+/* ============================================
+   MARKDOWN PROSE
+   ============================================ */
+
+.markdown-body {
+  color: var(--color-text);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.markdown-body h1 {
+  font-size: 3rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.markdown-body h2 {
+  font-size: 2rem;
+  margin: 3rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.markdown-body h3 {
+  font-size: 1.5rem;
+  margin: 2.25rem 0 0.75rem 0;
+}
+
+.markdown-body h4 {
+  font-size: 1.25rem;
+  margin: 1.75rem 0 0.5rem 0;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-size: 1rem;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.markdown-body p {
+  margin: 0 0 1.25rem 0;
+}
+
+.markdown-body a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.markdown-body a:hover {
+  color: var(--color-accent-hover);
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body em {
+  font-style: italic;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin: 0 0 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown-body li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.markdown-body li > ul,
+.markdown-body li > ol {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.markdown-body blockquote {
+  margin: 0 0 1.25rem 0;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 3px solid var(--color-text);
+  color: var(--color-text-secondary);
+}
+
+.markdown-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body hr {
+  height: 1px;
+  background: var(--color-border);
+  margin: 2.5rem 0;
+}
+
+/* Inline + block code */
+.markdown-body code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: #f0f0f0;
+  padding: 0.15em 0.4em;
+}
+
+.markdown-body pre {
+  background: #f0f0f0;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin: 0 0 1.25rem 0;
+  line-height: 1.55;
+}
+
+.markdown-body pre code {
+  background: transparent;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+/* Images */
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0;
+}
+
+/* Tables */
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.5rem 0;
+  font-size: 0.9375rem;
+}
+
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid var(--color-border);
+  padding: 0.625rem 0.875rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.markdown-body th {
+  background: #f0f0f0;
+  font-weight: 600;
+}
+
+/* Loading / error status */
+.doc-status {
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+}
+
+.doc-error {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-content p {
+  font-size: 0.8125rem;
+  margin-bottom: 0.25rem;
+}
+
+.footer-tagline {
+  color: var(--color-pencil-faint);
+  font-size: 0.875rem;
+}
+
+/* ============================================
+   SCROLL TO TOP BUTTON
+   ============================================ */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition), visibility var(--transition), background var(--transition);
+  z-index: 1000;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  background: var(--color-accent-hover);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1.5rem;
+  }
+
+  #logo-container #logo {
+    font-size: 1.25rem;
+  }
+
+  #content {
+    padding: var(--spacing-xl) 1.25rem var(--spacing-lg) 1.25rem;
+  }
+
+  .markdown-body {
+    font-size: 1rem;
+  }
+
+  .markdown-body h1 {
+    font-size: 2.25rem;
+  }
+
+  .markdown-body h2 {
+    font-size: 1.625rem;
+  }
+
+  .markdown-body h3 {
+    font-size: 1.375rem;
+  }
+
+  .scroll-to-top {
+    width: 44px;
+    height: 44px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+*:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   PRINT
+   ============================================ */
+
+@media print {
+
+  header nav,
+  .scroll-to-top,
+  footer {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  #content {
+    max-width: none;
+    padding: 0;
+  }
+
+  .markdown-body a {
+    color: black;
+  }
+}
