@@ -2,69 +2,54 @@
 
 > The behavioral adaptations to prolonged use of opioid drugs such as heroin and morphine include tolerance, defined as a reduced sensitivity to the drug effects and generally referring to attenuation of analgesic efficacy, and dependence revealed by drug craving and the physiological manifestations of drug withdrawal. ... Adaptive responses to repeated opioid administration are important considerations in the clinical arena and lead physicians to hesitate prescribing opioid drugs for the treatment of pain. The “holy grail” of opioid research has long been to develop drugs, or drug administration strategies, that result in effective analgesia without the detrimental adaptive responses.
 
-Source: [Opioid Tolerance–In Search of the Holy Grail](https://www.sciencedirect.com/science/article/pii/S0092867402006669) (2002) 
+Source: [Opioid Tolerance–In Search of the Holy Grail](https://www.sciencedirect.com/science/article/pii/S0092867402006669) (2002)
 
 ![Opioid tolerance in one panel: fixed-dose effect decays below the relief target while an escalating dose rides the target.](opioid_tolerance_single_panel.svg)
 
+## Summary
 
-<nav class="idx" aria-label="Document sections">
-<a class="idx-item" href="#tldr-summary">TL;DR / Summary</a>
-<a class="idx-item" href="#why-this-question">Why this question + what tractability means</a>
-<a class="idx-item" href="#disambiguation">Disambiguation (tolerance vs dependence vs OIH)</a>
-<a class="idx-item" href="#mechanism-landscape">Mechanism landscape</a>
-<a class="idx-item" href="#the-graveyard">The graveyard</a>
-<a class="idx-item" href="#the-live-embers">The live embers</a>
-<a class="idx-item" href="#the-access-comparator">The access comparator</a>
-<a class="idx-item" href="#botec">BOTEC</a>
-<a class="idx-item" href="#recommendation">Recommendation</a>
-<a class="idx-item" href="#key-uncertainties">Key uncertainties + what would change my mind</a>
-</nav>
+How can we help cancer patients when pain relief starts to wear off? What's true about this area, and where's the leverage? We investigate the research and highlight potential funding areas.
 
-<section id="tldr-summary" class="mapping-section">
-<h2>TL;DR / Summary</h2>
-<p>How can we help cancer patients when pain relief starts to wear off? What's true about this area, and where's the leverage? We investigate the research and highlight potential funding areas.</p>
-</section>
+## Tolerance vs dependence vs OIH
 
-<section id="why-this-question" class="mapping-section">
-<h2>Why this question + what tractability means</h2>
-<p>Build from scratch. The one-shot gestures at the bounty framing but never lays out the five tractability tests as an explicit rubric. This is authoring, though it's drawn from the bounty text you already have, not from the one-shot.</p>
-</section>
+**Tolerance** is a rightward shift in the dose–response curve: the same dose yields progressively less analgesia, and the original effect can be restored, for a while, by escalating the dose. This is what the figure in this document captures, and what the "holy grail" framing actually targets. Tolerance also develops unevenly across an opioid's effects, so analgesic tolerance dissociates from tolerance to respiratory depression and constipation. The target here is specifically analgesic tolerance.
 
-<section id="disambiguation" class="mapping-section">
-<h2>Disambiguation (tolerance vs dependence vs OIH)</h2>
-</section>
+**Dependence** sits on a different axis entirely. It is not about ongoing efficacy; it is a state of physiological adaptation in which abrupt cessation or an antagonist precipitates withdrawal. Two things matter. First, dependence is near-universal in chronically treated patients, an expected pharmacological consequence rather than a complication. Second, and more costly: dependence is not addiction. Addiction (opioid use disorder) is a behavioral disorder of compulsive use; physical dependence is not. Conflating the two is part of what drives clinicians to under-treat cancer pain, which ties this section directly to the access argument later.
 
-<section id="mechanism-landscape" class="mapping-section">
-<h2>Mechanism landscape</h2>
-<p>Mostly verify, light build. The candidate scan implies the taxonomy (NMDA, biased agonism, glial/TLR4, ultra-low-dose antagonism) but doesn't present it as a clean map up front. You're reorganizing existing content into a taxonomy, plus verifying the mechanism claims.</p>
-</section>
+**Opioid-induced hyperalgesia (OIH)** is the paradoxical case: the opioid itself sensitizes the patient to pain, often diffusely and beyond the original site. Clinically it can look identical to tolerance, with pain rising on a stable dose, but the correct response is the opposite. Tolerance you can often out-dose; with OIH, more opioid makes it worse, and the fix is dose reduction, rotation, or an adjunct. This single divergence is the most important practical reason the distinction matters: mistake one for the other and the reflexive move, escalation, is the wrong one.
 
-<section id="the-graveyard" class="mapping-section">
-<h2>The graveyard</h2>
-<p>Verify-heavy, this is the core audit. This is where the one-shot is richest and where the highest-risk claims live: MorphiDex's three failed trials, oliceridine/Trevena, minocycline's negative human study, Oxytrex's dose window. Every one of these needs a source pull. This is the section your verification process was really built for.</p>
-</section>
+## Mechanism landscape
 
-<section id="the-live-embers" class="mapping-section">
-<h2>The live embers</h2>
-<p>Verify-heavy. Same as the graveyard: the methadone cohort numbers, the buprenorphine systematic review, the 2023 network meta-analysis, ibudilast n=11. All checkable claims, all need pulling. The candidate table maps almost directly onto this section.</p>
-</section>
+| Candidate | What it is | Human evidence |
+| --- | --- | --- |
+| [**Methadone-centered opioid rotation**](mechanism.html?candidate=methadone-centered-opioid-rotation) | Use methadone when standard opioids stop working or cause OIH/tolerance; methadone has opioid activity plus NMDA-antagonist properties. | Best near-term clinical story. A 2021 cancer-induced bone pain cohort found 94 patients completed methadone rotation; 70.2% had ≥30% pain reduction, pain fell from 5.6 to 2.6, and breakthrough opioid use fell. A 2024 pilot RCT found methadone rotation feasible, safe, and acceptable, but was not powered for efficacy. ([Monash University][1]; [PubMed][12]) |
+| [**Buprenorphine rotation**](mechanism.html?candidate=buprenorphine-rotation) | Switch long-term full agonist opioid patients to buprenorphine, a partial μ-agonist with possible antihyperalgesic properties. | A 2021 systematic review of 22 studies found low-quality evidence that buprenorphine rotation reduced pain without precipitating withdrawal or serious adverse events. ([JAMA Network][2]) |
+| [**Ultra-low-dose naltrexone/naloxone with opioids**](mechanism.html?candidate=ultra-low-dose-naltrexone-naloxone-with-opioids) | Tiny antagonist doses added to opioids; the "cheap miracle" candidate. | Very strong rodent story: reduced tolerance/dependence and enhanced analgesia. Human data are mixed. Oxytrex trials showed dose-sensitive analgesic and physical-dependence signals, but effects depend on a very narrow dose window; higher "ultra-low" doses can lose the benefit. ([Sage Journals][3]) |
+| [**Ketamine**](mechanism.html?candidate=ketamine) | NMDA antagonist; can counter central sensitization/OIH and reduce opioid requirements. | Evidence is strongest in perioperative or selected refractory contexts. Reviews say ketamine may modulate OIH/tolerance, but evidence is insufficient for broad refractory cancer-pain use as an opioid adjunct. ([Pain Physician][4]) |
+| [**Amantadine, magnesium, dexmedetomidine, pregabalin, NSAID adjuncts**](mechanism.html?candidate=amantadine-magnesium-dexmedetomidine-pregabalin-nsaid-adjuncts) | Perioperative anti-OIH/opioid-sparing drugs, many already cheap/generic. | A 2023 network meta-analysis of 33 RCTs / 1,711 patients found several interventions associated with lower postoperative pain after opioid-based anesthesia; amantadine ranked best for pain, while dexmedetomidine was the only intervention that outperformed placebo across all indicators. ([Frontiers][6]) |
+| [**Ibudilast**](mechanism.html?candidate=ibudilast) | Glial/PDE/TLR4-ish modulator; used in Japan/Korea for other indications. | Human lab data are intriguing but small. A study in 11 opioid-dependent male volunteers found ibudilast may enhance oxycodone analgesia and may be useful for OUD-related outcomes; broader validation is lacking. ([Nature][7]) |
+| [**G-protein-biased / release-preferring μ-opioid agonists, e.g. SR-17018-style work**](mechanism.html?candidate=g-protein-biased-release-preferring-mu-opioid-agonists) | New opioid ligands designed to preserve analgesia with less tolerance/respiratory depression. | Very interesting preclinical frontier. A 2025 Nature paper found release-preferring agonists prolonged morphine/fentanyl antinociception in mice without enhancing fentanyl respiratory/cardiac effects, but the authors emphasize these are simple mouse thermal-nociception measures. ([Nature][10]) |
+| [**Dextromethorphan / MorphiDex**](mechanism.html?candidate=dextromethorphan-morphidex) | Cheap oral NMDA antagonist combined with morphine. | This was the obvious cheap bet, and it largely failed. Three multicenter randomized double-blind trials of MorphiDex failed to show enhanced opioid analgesia or reduced tolerance; another phase III cancer/severe pain study also failed to show meaningful benefit. ([PubMed][5]) |
+| [**Oliceridine / biased agonism already translated**](mechanism.html?candidate=oliceridine-biased-agonism-already-translated) | FDA-approved biased μ-opioid agonist for acute pain. | It reached the clinic, but it still carries opioid-class respiratory/addiction warnings; Trevena reduced commercial support in 2024 and discontinued remaining OLINVYK sales as of Dec. 31, 2024 for business/financial reasons. ([ASCPT][11]; [Trevena][13]) |
+| [**Minocycline / glial inhibitors**](mechanism.html?candidate=minocycline-glial-inhibitors) | Antibiotic/microglial inhibition hypothesis. | Preclinical evidence looked good, but a human study found minocycline did not change pain threshold/tolerance, pain severity, opioid craving, or withdrawal in opioid-maintained people. ([PMC][8]) |
+| [**Ondansetron / 5-HT3 antagonists**](mechanism.html?candidate=ondansetron-5-ht3-antagonists) | Anti-nausea drug; animal data suggested effects on tolerance/OIH. | Human signal weak. In a cesarean-spinal opioid study, ondansetron did not significantly affect postoperative pain or opioid consumption; another human withdrawal study found no reduction in withdrawal severity. ([HERO][9]) |
 
-<section id="the-access-comparator" class="mapping-section">
-<h2>The access comparator</h2>
-<p>Build from scratch, highest-value gap. The one-shot has <em>nothing</em> here. This is the section that might flip the conclusion and the one a sharp reviewer will most expect. Net-new authoring plus sourcing the Lancet access-abyss figures and a cost-per-DALY range.</p>
-</section>
+## Funding ask stub
 
-<section id="botec" class="mapping-section">
-<h2>BOTEC</h2>
-<p>Verify plus rebuild. The one-shot has the value-of-information framing (good, keep it) and the comparator figures (GiveWell ~$5k, ACE numbers) which need verifying. But it's missing access expansion as a comparator column, so once you build section 8 you have to fold it in here too.</p>
-</section>
+The live fundable question is whether a small, pragmatic methadone-centered rotation trial could produce a decision-relevant answer for cancer pain patients whose opioid analgesia is failing. Access expansion may still be the higher-value intervention for patients who receive no adequate opioid analgesia at all; this case is about a complementary downstream bottleneck, not a substitute for getting existing morphine to untreated patients.
 
-<section id="recommendation" class="mapping-section">
-<h2>Recommendation</h2>
-<p></p>
-</section>
+**Needed next:** estimate the cost of that trial from real comparators: palliative-care pilot RCTs, methadone rotation studies, oncology supportive-care trials, site/count assumptions, recruitment burden, and follow-up length. Until that number is pinned down, the post can identify the best candidate, but it cannot yet make a credible funding ask.
 
-<section id="key-uncertainties" class="mapping-section">
-<h2>Key uncertainties + what would change my mind</h2>
-<p></p>
-</section>
+[1]: https://research.monash.edu/en/publications/the-role-of-methadone-in-cancer-induced-bone-pain-a-retrospective/ "The role of methadone in cancer-induced bone pain"
+[2]: https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2784021 "Evaluation of Buprenorphine Rotation in Patients"
+[3]: https://journals.sagepub.com/doi/10.4137/CMT.S4870 "Ultra-Low-Dose Naloxone or Naltrexone to Improve Opioid Analgesia"
+[4]: https://www.painphysicianjournal.com/current/pdf?article=MTQ0Ng%3D%3D&journal=60 "A Comprehensive Review of Opioid-Induced Hyperalgesia"
+[5]: https://pubmed.ncbi.nlm.nih.gov/15911155/ "MorphiDex (Morphine sulfate/dextromethorphan)"
+[6]: https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2023.1199794/full "Pharmacological interventions for preventing opioid-induced hyperalgesia"
+[7]: https://www.nature.com/articles/npp201770 "Effects of Ibudilast on the Subjective, Reinforcing, and Analgesic Effects"
+[8]: https://pmc.ncbi.nlm.nih.gov/articles/PMC6581631/ "Minocycline does not affect experimental pain"
+[9]: https://hero.epa.gov/reference/10420915/ "The Effect of Ondansetron on Acute Opioid Tolerance"
+[10]: https://www.nature.com/articles/s41586-025-09880-5 "GTP release-selective agonists prolong opioid analgesic action"
+[11]: https://www.ascpt.org/Resources/ASCPT-News/View/articleid/25154 "FDA News: Issue 25, August 2020"
+[12]: https://pubmed.ncbi.nlm.nih.gov/38980427/ "Methadone versus other opioids for refractory malignant bone pain"
+[13]: https://www.trevena.com/investors/financial-information/all-sec-filings/content/0001104659-25-003715/tm253448d1_8k.htm "Trevena Current Report on Form 8-K"

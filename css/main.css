@@ -108,8 +108,10 @@ html {
 
   --transition: 0.3s ease-out;
 
-  /* Reading column */
-  --measure: 1120px;
+  /* Outer layout width (index + content). High enough to fill common
+     large monitors (1920 / 2560) edge-to-edge so leftover viewport
+     width doesn't pile up as right-hand whitespace. */
+  --measure: 2560px;
 }
 
 /* ============================================
@@ -137,66 +139,41 @@ a:hover {
 }
 
 /* ============================================
-   HEADER
-   ============================================ */
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.25rem 2rem;
-  background: var(--color-surface);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid var(--color-border);
-}
-
-#logo-container #logo {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-}
-
-#logo-container #logo a {
-  color: var(--color-text);
-}
-
-#logo-container #logo a:hover {
-  color: var(--color-accent-hover);
-}
-
-#logo-container #subtitle {
-  color: var(--color-text-secondary);
-  font-size: 0.8125rem;
-  margin-top: 0.25rem;
-}
-
-header nav ul {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-header nav ul li a {
-  color: var(--color-text-secondary);
-  font-size: 0.9375rem;
-  font-weight: 500;
-}
-
-header nav ul li a:hover {
-  color: var(--color-accent);
-}
-
-/* ============================================
    MAIN CONTENT
    ============================================ */
 
 #content {
   max-width: var(--measure);
+  /* Centered, with symmetric side gutters, so any leftover viewport
+     width beyond --measure splits evenly instead of all falling right. */
   margin: 0 auto;
-  padding: var(--spacing-2xl) 2rem var(--spacing-xl) 2rem;
+  padding: var(--spacing-2xl) clamp(1.5rem, 3vw, 3rem) var(--spacing-xl);
+  display: grid;
+  /* Content fills its full allocated track (the space left after the TOC
+     and gap). Every block shares this width, so edges stay aligned. */
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: clamp(3rem, 6vw, 6.5rem);
+  align-items: start;
+}
+
+body.toc-collapsed #content {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+/* ============================================
+   READING PROGRESS
+   ============================================ */
+
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--color-text);
+  z-index: 1000;
+  transition: width 0.1s linear;
 }
 
 /* ============================================
@@ -263,6 +240,44 @@ header nav ul li a:hover {
   color: var(--color-accent-hover);
 }
 
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  align-items: center;
+  margin: 0 0 1.25rem 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.breadcrumb a,
+.breadcrumb span {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.breadcrumb a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.breadcrumb span {
+  color: var(--color-text);
+}
+
+.breadcrumb .breadcrumb-separator {
+  color: var(--color-text-muted);
+}
+
 .markdown-body strong {
   font-weight: 600;
 }
@@ -326,12 +341,16 @@ header nav ul li a:hover {
   font-size: 0.875rem;
 }
 
-/* Images */
+/* Images render smaller than the reading column and stay centered.
+   width:100% with a capped max-width gives SVGs (which declare
+   width="100%" / no height) a definite box so they size from their
+   viewBox aspect ratio instead of an ambiguous intrinsic size. */
 .markdown-body img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 700px;
   height: auto;
   display: block;
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;
 }
 
 /* Tables */
@@ -356,49 +375,92 @@ header nav ul li a:hover {
 }
 
 /* ============================================
-   INDEX + SECTION MAPPING
+   SIDEBAR TABLE OF CONTENTS
    ============================================ */
 
-.markdown-body .idx {
-  margin: 3rem 0 6rem 0;
-  border-top: 1px solid var(--color-border);
+.toc {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
 }
 
-.markdown-body .idx-item {
-  display: block;
-  border-bottom: 1px solid var(--color-border);
-  padding: 1.05rem 0.25rem;
+body.toc-collapsed .toc {
+  display: none;
+}
+
+.toc-heading {
   font-family: var(--font-display);
-  font-size: 1.0625rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--color-text);
-  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 0 0 1rem 0;
 }
 
-.markdown-body .idx-item:hover {
-  color: var(--map-accent);
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
+.toc-list li {
+  margin: 0;
+}
+
+.toc-item {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  padding: 0.45rem 0.5rem 0.45rem 0.75rem;
+  border-left: 2px solid transparent;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.toc-item:hover {
+  color: var(--color-text);
+}
+
+.toc-item.active {
+  color: var(--color-text);
+  font-weight: 600;
+  border-left-color: var(--map-accent);
+}
+
+/* ============================================
+   SECTION MAPPING
+   ============================================ */
 
 .markdown-body .mapping-section {
-  margin: 7rem 0 0 0;
-  scroll-margin-top: 3rem;
+  margin: 3.5rem 0 0 0;
+  scroll-margin-top: 2rem;
 }
 
 .markdown-body .mapping-section + .mapping-section {
-  margin-top: 8rem;
+  margin-top: 4rem;
 }
 
 .markdown-body .mapping-section h2 {
-  margin: 0 0 1.75rem 0;
+  margin: 0 0 1.25rem 0;
 }
 
 .markdown-body .mapping-section p {
-  max-width: 960px;
   margin: 0;
   color: var(--color-text-secondary);
   font-size: 1.1rem;
   line-height: 1.85;
+}
+
+.markdown-body .mapping-section p + p {
+  margin-top: 1.5rem;
 }
 
 /* Loading / error status */
@@ -413,76 +475,33 @@ header nav ul li a:hover {
 }
 
 /* ============================================
-   FOOTER
-   ============================================ */
-
-footer {
-  background: var(--color-surface);
-  color: var(--color-text-secondary);
-  padding: 2rem;
-  text-align: center;
-  border-top: 1px solid var(--color-border);
-}
-
-.footer-content p {
-  font-size: 0.8125rem;
-  margin-bottom: 0.25rem;
-}
-
-.footer-tagline {
-  color: var(--color-pencil-faint);
-  font-size: 0.875rem;
-}
-
-/* ============================================
-   SCROLL TO TOP BUTTON
-   ============================================ */
-
-.scroll-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 48px;
-  height: 48px;
-  background: #000000;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity var(--transition), visibility var(--transition), background var(--transition);
-  z-index: 1000;
-}
-
-.scroll-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.scroll-to-top:hover {
-  background: var(--color-accent-hover);
-}
-
-/* ============================================
    RESPONSIVE
    ============================================ */
 
-@media (max-width: 768px) {
-  header {
-    padding: 1rem 1.5rem;
-  }
-
-  #logo-container #logo {
-    font-size: 1.25rem;
-  }
-
+/* Collapse the two-column layout: TOC becomes an
+   inline "Contents" block above the document. */
+@media (max-width: 900px) {
   #content {
-    padding: var(--spacing-xl) 1.25rem var(--spacing-lg) 1.25rem;
+    display: block;
+    padding: var(--spacing-xl) 1.25rem var(--spacing-lg);
   }
 
+  body.toc-collapsed #content {
+    display: block;
+  }
+
+  .toc {
+    position: static;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+    margin: 0 0 var(--spacing-xl) 0;
+    padding: 0 0 var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 768px) {
   .markdown-body {
     font-size: 1rem;
   }
@@ -499,12 +518,6 @@ footer {
     font-size: 1.375rem;
   }
 
-  .scroll-to-top {
-    width: 44px;
-    height: 44px;
-    bottom: 1.5rem;
-    right: 1.5rem;
-  }
 }
 
 /* ============================================
@@ -532,9 +545,8 @@ footer {
 
 @media print {
 
-  header nav,
-  .scroll-to-top,
-  footer {
+  #reading-progress,
+  .toc {
     display: none;
   }
 
@@ -544,6 +556,7 @@ footer {
   }
 
   #content {
+    display: block;
     max-width: none;
     padding: 0;
   }
