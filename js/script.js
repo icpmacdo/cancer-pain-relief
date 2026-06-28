@@ -187,6 +187,82 @@
 		update();
 	}
 
+	function setupImageZoom() {
+		var images = Array.prototype.slice.call(docEl.querySelectorAll('img'));
+		if (!images.length) return;
+
+		var overlay = document.createElement('div');
+		overlay.className = 'image-lightbox';
+		overlay.hidden = true;
+		overlay.setAttribute('role', 'dialog');
+		overlay.setAttribute('aria-modal', 'true');
+		overlay.setAttribute('aria-label', 'Expanded image');
+		overlay.tabIndex = -1;
+		overlay.innerHTML =
+			'<figure class="image-lightbox-figure">' +
+				'<img class="image-lightbox-image" alt="">' +
+				'<figcaption class="image-lightbox-caption"></figcaption>' +
+			'</figure>';
+		document.body.appendChild(overlay);
+
+		var lightboxImage = overlay.querySelector('.image-lightbox-image');
+		var caption = overlay.querySelector('.image-lightbox-caption');
+		var lastFocus = null;
+
+		function closeLightbox() {
+			if (overlay.hidden) return;
+			overlay.hidden = true;
+			document.body.classList.remove('lightbox-open');
+			lightboxImage.removeAttribute('src');
+			lightboxImage.style.removeProperty('--zoom-width');
+			if (lastFocus && typeof lastFocus.focus === 'function') {
+				lastFocus.focus({ preventScroll: true });
+			}
+		}
+
+		function openLightbox(image) {
+			var captionText = image.getAttribute('alt') || '';
+			var naturalWidth = image.naturalWidth || 1600;
+			var targetWidth = Math.min(
+				naturalWidth,
+				Math.max(window.innerWidth * 1.6, 1100),
+				2000
+			);
+			lastFocus = document.activeElement;
+			lightboxImage.src = image.currentSrc || image.src;
+			lightboxImage.alt = captionText;
+			lightboxImage.style.setProperty('--zoom-width', Math.round(targetWidth) + 'px');
+			caption.textContent = captionText;
+			caption.hidden = !captionText;
+			document.body.classList.add('lightbox-open');
+			overlay.hidden = false;
+			overlay.focus({ preventScroll: true });
+		}
+
+		images.forEach(function (image) {
+			if (image.closest('a, button')) return;
+
+			var trigger = document.createElement('button');
+			trigger.type = 'button';
+			trigger.className = 'image-zoom-trigger';
+			trigger.setAttribute(
+				'aria-label',
+				'Expand image' + (image.alt ? ': ' + image.alt : '')
+			);
+
+			image.parentNode.insertBefore(trigger, image);
+			trigger.appendChild(image);
+			trigger.addEventListener('click', function () {
+				openLightbox(image);
+			});
+		});
+
+		lightboxImage.addEventListener('click', closeLightbox);
+		document.addEventListener('keydown', function (event) {
+			if (event.key === 'Escape') closeLightbox();
+		});
+	}
+
 	function render(markdown) {
 		marked.setOptions({
 			gfm: true,
@@ -217,6 +293,7 @@
 		var nav = buildToc();
 		if (!nav) document.body.classList.add('toc-collapsed');
 		setupScrollSpy(nav);
+		setupImageZoom();
 
 		// If the page loaded with a #hash, jump to it now that content exists.
 		if (window.location.hash) {
