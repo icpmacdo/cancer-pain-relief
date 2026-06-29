@@ -1,23 +1,23 @@
 # Ondansetron / 5-HT3 antagonists
 
-Ondansetron is an elegant repurposing idea with weak human payoff. If a familiar anti-nausea drug also prevented opioid tolerance, it would be a beautiful cheap intervention. The human evidence does not yet support that story.
+An elegant repurposing idea with weak human payoff: a familiar anti-nausea drug that animal data suggested might blunt tolerance/OIH.
 
 ## What it is
 
-Anti-nausea drug; animal data suggested effects on tolerance/OIH.
-
-Ondansetron and other 5-HT3 antagonists are another example of an appealing repurposing idea. They are already widely used, relatively familiar, and animal work suggested effects on opioid tolerance or OIH.
+Ondansetron and other 5-HT3 antagonists are widely used and familiar, and animal work suggested effects on opioid tolerance or OIH, which makes them an appealing repurposing target.
 
 ## Human evidence
 
-Human signal weak. In a cesarean-spinal opioid study, ondansetron did not significantly affect postoperative pain or opioid consumption; another human withdrawal study found no reduction in withdrawal severity. ([HERO][1])
+In a cesarean-spinal opioid study, ondansetron did not significantly affect postoperative pain or opioid consumption; a separate human withdrawal study found no reduction in withdrawal severity. ([HERO][1])
 
-In a cesarean-spinal opioid study, ondansetron did not significantly reduce postoperative pain or opioid consumption. Other human work has not produced a compelling anti-withdrawal or anti-tolerance result.
+*Add: the n for each study and one verbatim quote.*
 
-## Tractability verdict
+## Why it failed / what would change the verdict
 
-**Low priority** for anti-tolerance, unless an expert identifies a much sharper niche.
+Human work has not reproduced the animal signal. It should stay in the documented-failures / weak-signals bucket unless an expert identifies a much sharper niche (a specific population or endpoint where the 5-HT3 mechanism would actually bite).
 
-This candidate should stay in the "documented failures / weak signals" section unless an expert identifies a much sharper niche.
+## Verdict
+
+**Graveyard.** Low priority for anti-tolerance absent a sharper niche.
 
 [1]: https://hero.epa.gov/reference/10420915/ "The Effect of Ondansetron on Acute Opioid Tolerance"

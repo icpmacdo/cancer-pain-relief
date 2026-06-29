@@ -1,23 +1,23 @@
 # Dextromethorphan / MorphiDex
 
-Dextromethorphan/MorphiDex is the cautionary failure inside the NMDA/glutamate branch. It looked like exactly the sort of cheap, oral, mechanistically plausible anti-tolerance intervention one would hope to find.
+The cautionary failure inside the NMDA/glutamate branch: the cheap, oral, mechanistically plausible anti-tolerance intervention everyone hoped for, which did not hold up.
 
 ## What it is
 
-Cheap oral NMDA antagonist combined with morphine.
-
-The NMDA hypothesis is the most practical-sounding anti-tolerance mechanism. Opioid exposure can interact with glutamatergic signaling, central sensitization, and opioid-induced hyperalgesia. NMDA antagonists should, in theory, blunt some of the sensitization that makes opioids lose effectiveness or paradoxically worsen pain.
+A purpose-built morphine + dextromethorphan combination. The NMDA hypothesis is the most practical-sounding anti-tolerance mechanism: opioid exposure interacts with glutamatergic signaling and central sensitization, so an NMDA antagonist should, in theory, blunt the sensitization that makes opioids lose effectiveness or paradoxically worsen pain.
 
 ## Human evidence
 
-This was the obvious cheap bet, and it largely failed. Three multicenter randomized double-blind trials of MorphiDex failed to show enhanced opioid analgesia or reduced tolerance; another phase III cancer/severe pain study also failed to show meaningful benefit. ([PubMed][1])
+Across three multicenter randomized double-blind trials, MorphiDex failed to show enhanced opioid analgesia or reduced tolerance; a further phase III cancer/severe-pain study also failed to show meaningful benefit. ([PubMed][1])
 
-The failed "cheap miracle" story is dextromethorphan plus morphine. MorphiDex was exactly the sort of intervention one would hope for: oral, cheap-ish, mechanistically plausible, and easy to combine with morphine. But the clinical trials did not show robust enhanced analgesia or reduced tolerance. That failure matters. It is probably the single most important negative update against the naive version of "just add an NMDA antagonist."
+*Add: the verbatim "no statistically significant differences" result quote, and the 2025 Cochrane NMDA review for the wider lane.*
 
-## Tractability verdict
+## Why it failed / what would change the verdict
 
-**Low priority as an intervention.** High value as a postmortem: why did the cleanest cheap candidate fail?
+It is probably the single most important negative update against the naive "just add an NMDA antagonist" story. The open question that would reopen it: did it fail on biology, or on design/dosing/endpoints? That postmortem, not another trial, is where the value sits, and it generalizes to the rest of the NMDA lane.
 
-NMDA modulation remains tractable as clinical protocol optimization, not as a generic anti-tolerance drug class. For MorphiDex specifically, the fundable value is the postmortem: why did the cleanest cheap candidate fail, and what does that imply for future trial design?
+## Verdict
+
+**Graveyard.** Low priority as an intervention; high value as a postmortem on why the cleanest cheap candidate failed.
 
 [1]: https://pubmed.ncbi.nlm.nih.gov/15911155/ "MorphiDex (Morphine sulfate/dextromethorphan)"
