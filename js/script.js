@@ -44,11 +44,14 @@
 	function wrapSections() {
 		var children = Array.prototype.slice.call(docEl.children);
 		var section = null;
+		var idCounts = {};
 		children.forEach(function (el) {
 			if (el.tagName === 'H2') {
 				section = document.createElement('section');
 				section.className = 'mapping-section';
-				section.id = slugify(el.textContent.trim());
+				var id = slugify(el.textContent.trim());
+				idCounts[id] = (idCounts[id] || 0) + 1;
+				section.id = idCounts[id] > 1 ? id + '-' + idCounts[id] : id;
 				docEl.insertBefore(section, el);
 				section.appendChild(el);
 			} else if (section) {
@@ -70,10 +73,8 @@
 		var list = document.createElement('ol');
 		list.className = 'toc-list';
 
-		sections.forEach(function (section, i) {
-			var num = i + 1;
-			var h2 = section.querySelector('h2');
-			var title = h2 ? h2.textContent.trim() : 'Section ' + num;
+		sections.forEach(function (section) {
+			var title = section.querySelector('h2').textContent.trim();
 
 			var li = document.createElement('li');
 			var a = document.createElement('a');
@@ -136,6 +137,12 @@
 			nav.appendChild(current);
 			docEl.insertBefore(nav, firstH1);
 		}
+
+	/* ---- Point a <meta> tag (by name or property) at fresh content ---- */
+	function setMetaContent(attr, value, content) {
+		var el = document.querySelector('meta[' + attr + '="' + value + '"]');
+		if (el) el.setAttribute('content', content);
+	}
 
 	/* ---- Reading progress + active-section highlight ---- */
 	function setupScrollSpy(nav) {
@@ -259,7 +266,15 @@
 
 		lightboxImage.addEventListener('click', closeLightbox);
 		document.addEventListener('keydown', function (event) {
-			if (event.key === 'Escape') closeLightbox();
+			if (overlay.hidden) return;
+			if (event.key === 'Escape') {
+				closeLightbox();
+			} else if (event.key === 'Tab') {
+				// Trap focus: the overlay (click image or Escape to close)
+				// is the only focusable element inside it.
+				event.preventDefault();
+				overlay.focus({ preventScroll: true });
+			}
 		});
 	}
 
@@ -276,10 +291,20 @@
 
 		wrapSections();
 
-			// Use the first <h1> as the page title, if present.
+			// Use the first <h1> as the page title, if present. On the shared
+			// mechanism.html template this is the only way the tab title and
+			// description reflect which candidate is actually loaded.
 			var firstH1 = docEl.querySelector('h1');
 			if (firstH1 && firstH1.textContent.trim()) {
-				document.title = firstH1.textContent.trim();
+				var pageTitle = firstH1.textContent.trim();
+				document.title = pageTitle;
+				setMetaContent('property', 'og:title', pageTitle);
+			}
+			var introPara = docEl.querySelector('h1 + p');
+			if (introPara && introPara.textContent.trim()) {
+				var pageDescription = introPara.textContent.trim();
+				setMetaContent('name', 'description', pageDescription);
+				setMetaContent('property', 'og:description', pageDescription);
 			}
 			buildBreadcrumb(firstH1);
 
