@@ -1,23 +1,25 @@
-# G-protein-biased / release-preferring mu-opioid agonists
+# GTP-release-selective mu-opioid agonists
 
-Receptor-level frontier. The promise is separation: amplify or preserve analgesia without proportionally amplifying tolerance, respiratory depression, or other opioid liabilities.
+This receptor-level approach aims to extend opioid antinociception, but its published evidence consists of receptor-membrane and mouse experiments rather than human treatment results. ([Nature][1])
 
 ## What it is
 
-New opioid ligands designed to preserve analgesia with less tolerance/respiratory depression. The newer release-preferring version goes beyond the simple G-protein-versus-beta-arrestin split, biasing the receptor toward distinct active states inside the G-protein cycle itself.
+G-protein-coupled receptors promote nucleotide exchange in heterotrimeric G proteins. The newer strategy identifies mu-opioid-receptor ligands with different preferences for promoting GTP release versus GTP binding, an experimental axis distinct from the conventional G-protein-versus-beta-arrestin comparison. ([Nature][1])
+
+The proposed goal is to enhance and prolong opioid antinociception without proportionally increasing other measured opioid effects. This is a preclinical hypothesis, not an established therapeutic separation in people. ([Nature][1])
 
 ## Human evidence
 
-A 2025 Nature paper found release-preferring agonists prolonged morphine/fentanyl antinociception in mice without enhancing fentanyl respiratory/cardiac effects; the authors emphasize these are simple mouse thermal-nociception measures. ([Nature][1])
+The 2025 publication reported assays in receptor-expressing cell membranes, mouse spinal-cord membranes, and living mice; it did not report a human trial. Two release-preferring compounds, muzepan1 and muzepan2, enhanced and prolonged morphine antinociception in hot-plate and tail-flick tests. Muzepan1 also prolonged fentanyl antinociception "without enhancing the respiratory and cardiac effects of fentanyl" at the tested doses. ([Nature][1])
 
-*Add: the verbatim "without enhancing the respiratory and cardiac effects" quote, and make explicit this is mice and membranes, months old.*
+The authors limited these observations to simple measures of thermal nociception and stated that more complex pain states still require study. The paper therefore does not establish efficacy in cancer pain, durability in people, or safety across human exposure levels. ([Nature][1])
 
 ## Why it failed / what would change the verdict
 
-*Not failed; just early, and already inside the NIH/pharma orbit (the lab holds the relevant patents). It is aimed squarely at durability, which is closer to the right target than the older biased-agonism story. What would move it from watch to fund: a lab naming a specific bridge experiment toward durability that NIH/pharma will not pay for, and a step beyond simple thermal-nociception measures.*
+It has not failed clinically because the cited program has not reached reported human efficacy testing. The next evidence bridge is replication in disease-relevant pain models, followed by pharmacology and safety studies that test whether the apparent separation persists across doses and exposure. Any eventual human program would need durability endpoints rather than short-term analgesic potency alone. ([Nature][1])
 
 ## Verdict
 
-**Watchlist.** Highest scientific upside, but preclinical and not a cheap, fundable-now path. Watch, don't fund.
+**Preclinical watchlist.** The mouse results support further translational work, but they are too early to support a clinical recommendation or a near-term intervention program for cancer pain. ([Nature][1])
 
-[1]: https://www.nature.com/articles/s41586-025-09880-5 "GTP release-selective agonists prolong opioid analgesic action"
+[1]: https://www.nature.com/articles/s41586-025-09880-5 "GTP release-selective agonists prolong opioid analgesic efficacy"

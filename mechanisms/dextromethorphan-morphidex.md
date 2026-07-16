@@ -1,23 +1,25 @@
-# Dextromethorphan / MorphiDex
+# Dextromethorphan and MorphiDex
 
-The cautionary failure inside the NMDA/glutamate branch: the cheap, oral, mechanistically plausible anti-tolerance intervention everyone hoped for, which did not hold up.
+MorphiDex is a negative clinical case for combining morphine with an oral NMDA-receptor antagonist: three controlled trials did not show enhanced analgesia or reduced opioid tolerance. ([Pain][1])
 
 ## What it is
 
-A purpose-built morphine + dextromethorphan combination. The NMDA hypothesis is the most practical-sounding anti-tolerance mechanism: opioid exposure interacts with glutamatergic signaling and central sensitization, so an NMDA antagonist should, in theory, blunt the sensitization that makes opioids lose effectiveness or paradoxically worsen pain.
+MorphiDex combined morphine sulfate with dextromethorphan hydrobromide. The clinical-development rationale, based on preclinical studies, was that adding the NMDA-receptor antagonist dextromethorphan might enhance opioid analgesia and prevent tolerance during chronic administration. ([Pain][1])
 
 ## Human evidence
 
-Across three multicenter randomized double-blind trials, MorphiDex failed to show enhanced opioid analgesia or reduced tolerance; a further phase III cancer/severe-pain study also failed to show meaningful benefit. ([PubMed][1])
+The phase 3 registration program comprised three multicenter, randomized, double-blind, controlled trials comparing the morphine-dextromethorphan combination with morphine in chronic pain. One trial compared changes in average daily pain intensity at fixed doses, while two compared dose escalation needed to maintain pain relief. ([Pain][1])
 
-*Add: the verbatim "no statistically significant differences" result quote, and the 2025 Cochrane NMDA review for the wider lane.*
+The publication reported: "No statistically significant differences between treatment groups" on any primary or secondary efficacy variable in any of the three trials. The authors concluded that adding dextromethorphan did not provide clinical benefit in this program. ([Pain][1])
+
+The three negative trials directly weaken the claim that this fixed oral combination reliably enhances morphine analgesia or reduces tolerance. They do not test every possible NMDA-modulating drug, dose, or clinical population. ([Pain][1])
 
 ## Why it failed / what would change the verdict
 
-It is probably the single most important negative update against the naive "just add an NMDA antagonist" story. The open question that would reopen it: did it fail on biology, or on design/dosing/endpoints? That postmortem, not another trial, is where the value sits, and it generalizes to the rest of the NMDA lane.
+The useful next step is a postmortem of target engagement, dose ratio, population, and endpoint selection. Reopening this exact combination would require a specific, testable explanation for the absence of benefit across all three trials and evidence that a revised design addresses that explanation. ([Pain][1])
 
 ## Verdict
 
-**Graveyard.** Low priority as an intervention; high value as a postmortem on why the cleanest cheap candidate failed.
+**Deprioritized intervention; high-value failure case.** The completed phase 3 program does not support MorphiDex as a live efficacy candidate without a new mechanistic justification. ([Pain][1])
 
-[1]: https://pubmed.ncbi.nlm.nih.gov/15911155/ "MorphiDex (Morphine sulfate/dextromethorphan)"
+[1]: https://pubmed.ncbi.nlm.nih.gov/15911155/ "MorphiDex (morphine sulfate/dextromethorphan hydrobromide combination) in the treatment of chronic pain: three multicenter, randomized, double-blind, controlled clinical trials fail to demonstrate enhanced opioid analgesia or reduction in tolerance"

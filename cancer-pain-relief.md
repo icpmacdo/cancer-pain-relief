@@ -1,66 +1,114 @@
 # Diminishing Returns
 
-> **The behavioral adaptations to prolonged use of opioid drugs such as heroin and morphine include tolerance, defined as a reduced sensitivity to the drug effects and generally referring to attenuation of analgesic efficacy, and dependence revealed by drug craving and the physiological manifestations of drug withdrawal. ... Adaptive responses to repeated opioid administration are important considerations in the clinical arena and lead physicians to hesitate prescribing opioid drugs for the treatment of pain. The “holy grail” of opioid research has long been to develop drugs, or drug administration strategies, that result in effective analgesia without the detrimental adaptive responses.**
-
-Source: [Opioid Tolerance–In Search of the Holy Grail](https://www.sciencedirect.com/science/article/pii/S0092867402006669) (2002)
-
 ![Opioid tolerance in one panel: fixed-dose effect decays below the relief target while an escalating dose rides the target.](opioid_tolerance_single_panel.svg)
+
+*Conceptual illustration based on the NCI description of tolerance as reduced response to the same opioid dose over time. ([NCI Cancer Pain PDQ][2])*
 
 ## Summary
 
-Cancer patients on long-term opioids often find that pain relief fades as tolerance sets in. This document investigates what's actually known about why, surveys the candidate interventions, and asks where funding could have the most leverage.
+When cancer pain worsens during opioid treatment, "the opioid stopped working" is a description, not a diagnosis. NCI guidance calls for classifying whether pain arises from cancer, treatment, another cause, or a mixture and notes that increasing pain or opioid requirements can reflect OIH, tolerance, or disease progression. Opioid neurotoxicity and withdrawal can further complicate interpretation. ([NCI Cancer Pain PDQ][2]; [NCI Pain Control guide][30]; [OIN rapid review][31]) This project therefore studies **analgesic durability in opioid-refractory cancer pain**, with tolerance and OIH treated as possible research phenotypes rather than assumed causes.
+
+This review did not identify an inexpensive intervention that reliably prevents long-term opioid tolerance in humans. Current cancer-opioid rotation guidance describes the clinical evidence as mixed and inconclusive, while direct trials of several proposed add-ons are negative, insufficient, or outside chronic cancer pain. ([Opioid-rotation guideline][3]; [Ketamine phase III trial][9]; [Glial-modulator review][11]; [MorphiDex trials][13]) The site's resulting priority is comparative evidence for specialist opioid strategies, led by full methadone rotation versus standardized conventional opioid rotation, combined with structured reassessment and generator-directed care.
 
 ## Access gap
 
-Before tolerance is even the binding constraint, many patients receive little or no opioid analgesia. The Lancet Commission figure below shows the global skew in distributed opioid morphine-equivalent per patient in need of palliative care, averaged over 2010-13, alongside the estimated share of serious health-related suffering need that is met. ([Lancet Commission][14])
+Before durability becomes the binding constraint, many patients receive little or no opioid analgesia. The Lancet Commission figure below shows the global skew in distributed opioid morphine-equivalent per patient in need of palliative care, averaged over 2010-13, alongside the estimated share of serious health-related suffering need that is met. The Commission estimated that closing the medicine-only morphine shortfall would cost roughly $145 million per year at the lowest available prices or $600 million at prevailing regional prices. This remains the comparison case for any research funding proposal. ([Lancet Commission][1])
 
 ![Distributed opioid morphine-equivalent per patient in need of palliative care, averaged over 2010-13, and estimated percentage of need met for health conditions most associated with serious health-related suffering.](images/distributed-opioid-morphine-equivalent.png)
 
-## Tolerance vs dependence vs OIH
+## What worsening pain can mean
 
-**Tolerance** is a rightward shift in the dose–response curve: the same dose yields progressively less analgesia, and the original effect can be restored, for a while, by escalating the dose. This is what the figure in this document captures, and what the "holy grail" framing actually targets. Tolerance also develops unevenly across an opioid's effects, so analgesic tolerance dissociates from tolerance to respiratory depression and constipation. The target here is specifically analgesic tolerance.
+| Explanation | Research boundary |
+| --- | --- |
+| **Progression or a new pain generator** | New tumour activity, fracture, compression, infection, obstruction, or another pathology can increase pain independently of opioid pharmacology. ([NCI Cancer Pain PDQ][2]; [ASTRO][4]) |
+| **Pain-phenotype shift or treatment injury** | Tumour-related, treatment-related, unrelated, and mixed pain should be separated. Somatic, visceral, neuropathic, and mixed pain may require different strategies. ([NCI Cancer Pain PDQ][2]) |
+| **End-of-dose failure, adherence, or withdrawal** | Timing, formulation, route, missed doses, and rapid reductions can produce worsening pain without proving tolerance or OIH. ([NCI Cancer Pain PDQ][2]; [NCI Pain Control guide][30]) |
+| **Opioid-induced neurotoxicity** | Sedation, delirium, hallucinations, myoclonus, and hyperalgesia are recognized manifestations; dehydration, organ dysfunction, high doses, and interacting medicines can increase concern. ([NCI Cancer Pain PDQ][2]; [OIN rapid review][31]) |
+| **Tolerance** | Tolerance means reduced analgesic response to the same exposure over time. A dose trajectory alone does not establish why pain worsened. ([NCI Cancer Pain PDQ][2]) |
+| **Possible OIH** | OIH describes paradoxically increased pain sensitivity during opioid exposure, but clinical relevance remains uncertain and there is no standard cancer-specific diagnostic or treatment recommendation. ([NCI Cancer Pain PDQ][2]) |
 
-**Dependence** sits on a different axis entirely. It is not about ongoing efficacy; it is a state of physiological adaptation in which abrupt cessation or an antagonist precipitates withdrawal. Two things matter. First, dependence is near-universal in chronically treated patients, an expected pharmacological consequence rather than a complication. Second, and the more costly error: dependence is not addiction. Addiction (opioid use disorder) is a behavioral disorder of compulsive use; physical dependence is not. Conflating the two is part of what drives clinicians to under-treat cancer pain, which ties this section directly to the access argument later.
+The NCI notes that increasing pain or opioid requirements can reflect OIH, tolerance, or disease progression and states that "there is no standard recommendation for the diagnosis and treatment of OIH." Structured reassessment is therefore the central guardrail. ([NCI Cancer Pain PDQ][2])
 
-**Opioid-induced hyperalgesia (OIH)** is the paradoxical case: the opioid itself sensitizes the patient to pain, often diffusely and beyond the original site. Clinically it can look identical to tolerance, with pain rising on a stable dose, but the correct response is the opposite. Tolerance you can often out-dose; with OIH, more opioid makes it worse, and the fix is dose reduction, rotation, or an adjunct. This single divergence is the most important practical reason the distinction matters: mistake one for the other and the reflexive move, escalation, is the wrong one.
+## Evidence landscape
 
-## Mechanism landscape
+| Candidate | Current evidence position | Status |
+| --- | --- | --- |
+| [**Conventional opioid rotation**](mechanism.html?candidate=opioid-rotation) | Established clinical rescue and the necessary active comparator for methadone studies. A 2025 international guideline found mixed and inconclusive evidence, modest trial strength, and substantial conversion variability. ([Guideline][3]) | <span class="status status-active">Established comparator</span> |
+| [**Pain-generator and procedural rescue**](mechanism.html?candidate=pain-generator-procedural-rescue) | Palliative radiotherapy is evidence-backed care for symptomatic bone metastases. Intrathecal therapy and other procedures are phenotype-specific research and access lanes. ([ASTRO][4]; [Ontario assessment][22]) | <span class="status status-active">Parallel clinical lane</span> |
+| [**Methadone-centered strategies**](mechanism.html?candidate=methadone-centered-opioid-rotation) | The strongest cancer-specific opioid-strategy signal, but not proven comparative efficacy or tolerance reversal. Full rotation and low-dose add-on therapy are separate questions. ([Pilot RCT][5]; [US cohort][6]) | <span class="status status-active">Priority research</span> |
+| [**Buprenorphine rotation**](mechanism.html?candidate=buprenorphine-rotation) | Direct cancer evidence now includes small 2025 and 2026 retrospective cohorts. These support prospective study, not superiority, OIH treatment, or tolerance reversal. ([2025 cohort][33]; [2026 cohort][7]) | <span class="status status-pending">Second tier</span> |
+| [**Levorphanol rotation**](mechanism.html?candidate=levorphanol-rotation) | One prospective, single-group study followed 40 cancer outpatients for 10 days. Feasibility, access, and durability remain uncertain. ([Levorphanol study][8]) | <span class="status status-pending">Exploratory</span> |
+| [**Ketamine**](mechanism.html?candidate=ketamine) | A 185-person phase III cancer-pain trial found no net clinical benefit for broad add-on use, and Cochrane judged the wider evidence insufficient. ([Phase III trial][9]; [Cochrane review][34]) | <span class="status status-pending">Selected rescue</span> |
+| [**Amantadine and perioperative adjuncts**](mechanism.html?candidate=amantadine-magnesium-dexmedetomidine-pregabalin-nsaid-adjuncts) | Evidence concerns acute postoperative OIH prevention and opioid sparing, not months-long cancer-pain durability. ([Network meta-analysis][10]) | <span class="status status-pending">Separate acute lane</span> |
+| [**Ultra-low-dose naltrexone or naloxone with opioids**](mechanism.html?candidate=ultra-low-dose-naltrexone-naloxone-with-opioids) | A phase II trial and one phase III trial reported noncancer signals, while a separate phase III dependence analysis was nonsignificant amid high attrition. ([Oxytrex phase II trial][19]; [Published phase III trial][35]; [Development review][20]) | <span class="status status-pending">Watchlist</span> |
+| [**Ibudilast**](mechanism.html?candidate=ibudilast) | Small opioid-laboratory signals, but no direct cancer-pain, cancer OIH, or analgesic-durability evidence. A 2025 review found no convincing efficacy for current glial targets. ([Glial-modulator review][11]) | <span class="status status-pending">Watchlist</span> |
+| [**GTP-release-selective mu-opioid agonists**](mechanism.html?candidate=g-protein-biased-release-preferring-mu-opioid-agonists) | A scientifically interesting mouse and membrane result aimed directly at durability. It remains preclinical and limited to simple nociception models. ([Nature][12]) | <span class="status status-pending">Preclinical watchlist</span> |
+| [**Dextromethorphan or MorphiDex**](mechanism.html?candidate=dextromethorphan-morphidex) | Three multicentre randomized trials failed to show enhanced analgesia or reduced tolerance. ([MorphiDex trials][13]) | <span class="status status-pending">Deprioritized</span> |
+| [**Oliceridine**](mechanism.html?candidate=oliceridine-biased-agonism-already-translated) | Approved for short-term IV acute pain, with ordinary opioid warnings and no controlled safety evaluation beyond 48 hours. Commercial sales were discontinued for business reasons. ([DailyMed][14]; [Trevena][15]) | <span class="status status-pending">Translation caution</span> |
+| [**Minocycline and glial inhibitors**](mechanism.html?candidate=minocycline-glial-inhibitors) | A human opioid-maintenance study did not reproduce the preclinical pain or tolerance signal. ([Human study][16]) | <span class="status status-pending">Deprioritized</span> |
+| [**Ondansetron and 5-HT3 antagonists**](mechanism.html?candidate=ondansetron-5-ht3-antagonists) | A human postoperative trial did not reproduce the proposed animal signal, and it did not test chronic cancer-pain durability. ([Ondansetron trial][21]) | <span class="status status-pending">Deprioritized</span> |
 
-| Candidate | What it is | Human evidence | Status |
-| --- | --- | --- | --- |
-| [**Opioid rotation**](mechanism.html?candidate=opioid-rotation) | Switch from one opioid to another, or change route, when analgesia is inadequate or side effects are intolerable. The logic is incomplete cross-tolerance: tolerance to one opioid does not fully transfer to the next. | Common, practical cancer-pain maneuver. Rotation is needed in roughly 20-44% of cancer-pain patients and produces clinical improvement in about 40-80% of cases. New opioid doses are usually reduced 30-50% from calculated equianalgesic estimates, then titrated. | <span class="status status-active">Active work</span> |
-| [**Methadone-centered opioid rotation**](mechanism.html?candidate=methadone-centered-opioid-rotation) | Use methadone when standard opioids stop working or cause OIH/tolerance; methadone has opioid activity plus NMDA-antagonist properties. | Best near-term clinical story, and now independently replicated. A 2021 cancer-induced bone pain cohort (Cabrini/Monash) found 94 patients completed methadone rotation; 70.2% had ≥30% pain reduction, pain fell from 5.6 to 2.6, and breakthrough opioid use fell. The same group's 2024 pilot RCT found rotation feasible, safe, and acceptable, but was not powered for efficacy. A separate 2026 retrospective at Trinity Health Grand Rapids (n=27), with no link to the Melbourne group, found the same direction: pain 7→4 and breakthrough opioid 90→31 MME. ([Monash University][1]; [PubMed][12]; [JPPCP][15]) | <span class="status status-active">Active work</span> |
-| [**Buprenorphine rotation**](mechanism.html?candidate=buprenorphine-rotation) | Switch long-term full agonist opioid patients to buprenorphine, a partial μ-agonist with possible antihyperalgesic properties. | A 2021 systematic review of 22 studies found low-quality evidence that buprenorphine rotation reduced pain without precipitating withdrawal or serious adverse events. ([JAMA Network][2]) | <span class="status status-pending">Pending</span> |
-| [**Ultra-low-dose naltrexone/naloxone with opioids**](mechanism.html?candidate=ultra-low-dose-naltrexone-naloxone-with-opioids) | Tiny antagonist doses added to opioids; the "cheap miracle" candidate. | Very strong rodent story: reduced tolerance/dependence and enhanced analgesia. Human data are mixed. Oxytrex trials showed dose-sensitive analgesic and physical-dependence signals, but effects depend on a very narrow dose window; higher "ultra-low" doses can lose the benefit. ([Sage Journals][3]) | <span class="status status-pending">Pending</span> |
-| [**Ketamine**](mechanism.html?candidate=ketamine) | NMDA antagonist; can counter central sensitization/OIH and reduce opioid requirements. | Evidence is strongest in perioperative or selected refractory contexts. Reviews say ketamine may modulate OIH/tolerance, but evidence is insufficient for broad refractory cancer-pain use as an opioid adjunct. ([Pain Physician][4]) | <span class="status status-pending">Pending</span> |
-| [**Amantadine, magnesium, dexmedetomidine, pregabalin, NSAID adjuncts**](mechanism.html?candidate=amantadine-magnesium-dexmedetomidine-pregabalin-nsaid-adjuncts) | Perioperative anti-OIH/opioid-sparing drugs, many already cheap/generic. | A 2023 network meta-analysis of 33 RCTs / 1,711 patients found several interventions associated with lower postoperative pain after opioid-based anesthesia; amantadine ranked best for pain, while dexmedetomidine was the only intervention that outperformed placebo across all indicators. ([Frontiers][6]) | <span class="status status-pending">Pending</span> |
-| [**Ibudilast**](mechanism.html?candidate=ibudilast) | Glial/PDE/TLR4-ish modulator; used in Japan/Korea for other indications. | Human lab data are intriguing but small. A study in 11 opioid-dependent male volunteers found ibudilast may enhance oxycodone analgesia and may be useful for OUD-related outcomes; broader validation is lacking. ([Nature][7]) | <span class="status status-pending">Pending</span> |
-| [**G-protein-biased / release-preferring μ-opioid agonists, e.g. SR-17018-style work**](mechanism.html?candidate=g-protein-biased-release-preferring-mu-opioid-agonists) | New opioid ligands designed to preserve analgesia with less tolerance/respiratory depression. | Very interesting preclinical frontier. A 2025 Nature paper found release-preferring agonists prolonged morphine/fentanyl antinociception in mice without enhancing fentanyl respiratory/cardiac effects, but the authors emphasize these are simple mouse thermal-nociception measures. ([Nature][10]) | <span class="status status-pending">Pending</span> |
-| [**Dextromethorphan / MorphiDex**](mechanism.html?candidate=dextromethorphan-morphidex) | Cheap oral NMDA antagonist combined with morphine. | This was the obvious cheap bet, and it largely failed. Three multicenter randomized double-blind trials of MorphiDex failed to show enhanced opioid analgesia or reduced tolerance; another phase III cancer/severe pain study also failed to show meaningful benefit. ([PubMed][5]) | <span class="status status-pending">Pending</span> |
-| [**Oliceridine / biased agonism already translated**](mechanism.html?candidate=oliceridine-biased-agonism-already-translated) | FDA-approved biased μ-opioid agonist for acute pain. | It reached the clinic, but it still carries opioid-class respiratory/addiction warnings; Trevena reduced commercial support in 2024 and discontinued remaining OLINVYK sales as of Dec. 31, 2024 for business/financial reasons. ([ASCPT][11]; [Trevena][13]) | <span class="status status-pending">Pending</span> |
-| [**Minocycline / glial inhibitors**](mechanism.html?candidate=minocycline-glial-inhibitors) | Antibiotic/microglial inhibition hypothesis. | Preclinical evidence looked good, but a human study found minocycline did not change pain threshold/tolerance, pain severity, opioid craving, or withdrawal in opioid-maintained people. ([PMC][8]) | <span class="status status-pending">Pending</span> |
-| [**Ondansetron / 5-HT3 antagonists**](mechanism.html?candidate=ondansetron-5-ht3-antagonists) | Anti-nausea drug; animal data suggested effects on tolerance/OIH. | Human signal weak. In a cesarean-spinal opioid study, ondansetron did not significantly affect postoperative pain or opioid consumption; another human withdrawal study found no reduction in withdrawal severity. ([HERO][9]) | <span class="status status-pending">Pending</span> |
+## Research priorities
 
-## Funding ask stub
+1. **Preserve the unanswered full-rotation comparison.** The international guideline found mixed and inconclusive rotation evidence, and the 2024 methadone comparison was a feasibility pilot rather than an efficacy trial. A full methadone-versus-standardized-rotation comparison therefore remains unanswered. ([Opioid-rotation guideline][3]; [Pilot RCT][5])
+2. **Coordinate around occupied methadone lanes.** The public MetAddon record lists a planned 166-person comparison of add-on methadone versus add-on sustained-release morphine, and a published Chinese protocol plans to randomize 164 people between two methadone conversion methods. Neither design answers the full-rotation question. ([MetAddon][17]; [Conversion trial][18])
+3. **Build a generator-directed programme.** Radiotherapy is guideline-supported for symptomatic bone metastases, while the evidence and access picture for intrathecal delivery remains less certain and a 72-person comparative trial is recruiting. ([ASTRO][4]; [Ontario assessment][22]; [CAREGIVER trial][23])
+4. **Recover results before commissioning more small studies.** The 81-person KETACANCER cohort is listed as completed without posted results, so results recovery may be more informative than another uncontrolled ketamine series. ([KETACANCER][24])
+5. **Keep preclinical and other-population work in its own lane.** Suzetrigine phase III evidence concerns acute postoperative pain, while the cited Corydalis and cortical chemogenetic findings come from mouse studies. None answers the clinical cancer-durability question. ([Suzetrigine phase III trials][25]; [Corydalis mouse study][26]; [Cortical chemogenetic study][27])
 
-The open fundable question is whether a small, pragmatic methadone-centered rotation trial could produce a decision-relevant answer for cancer pain patients whose opioid analgesia is failing. That trial does not exist: the 2024 pilot's own authors called for an "appropriately powered multi-centre" successor, and as of June 2026 none is registered on the ANZCTR or ClinicalTrials.gov. ([ANZCTR][16]) The original investigator, Natasha Michael, has since moved from Director of Palliative Care at Cabrini Health to Associate Professor at the University of Notre Dame Australia, so whether the trial stays with her former Cabrini/Monash colleagues or needs a new home is itself part of the gap. ([Notre Dame][17]) Access expansion may still be the higher-value intervention for patients who receive no adequate opioid analgesia at all; this case is about a complementary downstream bottleneck, not a substitute for getting existing morphine to untreated patients.
+## Outcomes that matter
 
-**Needed next:** estimate the cost of that trial from real comparators: palliative-care pilot RCTs, methadone rotation studies, oncology supportive-care trials, site/count assumptions, recruitment burden, and follow-up length. Until that number is pinned down, this document can identify the best candidate, but it cannot yet make a credible funding ask.
+The following proposed core draws on NCI cancer-pain assessment domains, an international consensus on cancer-pain radiotherapy endpoints, and CONSORT 2025 requirements for transparent outcome, harm, intervention, missing-data, and participant-flow reporting. ([NCI Cancer Pain PDQ][2]; [Endpoint consensus][28]; [CONSORT 2025][29]) A decision-useful study should collect:
 
-[1]: https://research.monash.edu/en/publications/the-role-of-methadone-in-cancer-induced-bone-pain-a-retrospective/ "The role of methadone in cancer-induced bone pain"
-[2]: https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2784021 "Evaluation of Buprenorphine Rotation in Patients"
-[3]: https://journals.sagepub.com/doi/10.4137/CMT.S4870 "Ultra-Low-Dose Naloxone or Naltrexone to Improve Opioid Analgesia"
-[4]: https://www.painphysicianjournal.com/current/pdf?article=MTQ0Ng%3D%3D&journal=60 "A Comprehensive Review of Opioid-Induced Hyperalgesia"
-[5]: https://pubmed.ncbi.nlm.nih.gov/15911155/ "MorphiDex (Morphine sulfate/dextromethorphan)"
-[6]: https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2023.1199794/full "Pharmacological interventions for preventing opioid-induced hyperalgesia"
-[7]: https://www.nature.com/articles/npp201770 "Effects of Ibudilast on the Subjective, Reinforcing, and Analgesic Effects"
-[8]: https://pmc.ncbi.nlm.nih.gov/articles/PMC6581631/ "Minocycline does not affect experimental pain"
-[9]: https://hero.epa.gov/reference/10420915/ "The Effect of Ondansetron on Acute Opioid Tolerance"
-[10]: https://www.nature.com/articles/s41586-025-09880-5 "GTP release-selective agonists prolong opioid analgesic action"
-[11]: https://www.ascpt.org/Resources/ASCPT-News/View/articleid/25154 "FDA News: Issue 25, August 2020"
-[12]: https://pubmed.ncbi.nlm.nih.gov/38980427/ "Methadone versus other opioids for refractory malignant bone pain"
-[13]: https://www.trevena.com/investors/financial-information/all-sec-filings/content/0001104659-25-003715/tm253448d1_8k.htm "Trevena Current Report on Form 8-K"
-[14]: https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(18)30082-2/fulltext "The Lancet Commission on Palliative Care and Pain Relief—findings, recommendations, and future directions"
-[15]: https://pubmed.ncbi.nlm.nih.gov/41511057/ "Evaluating Methadone as Treatment for Refractory Cancer-Induced Bone Pain"
-[16]: https://www.anzctr.org.au/Trial/Registration/TrialReview.aspx?id=380812 "ANZCTR: Methadone rotation versus other opioid rotation for refractory cancer induced bone pain"
-[17]: https://www.notredame.edu.au/research/institutes-and-initiatives/institute-for-health-research/people/natasha-michael "Natasha Michael, Institute for Health Research, University of Notre Dame Australia"
+- average and worst pain, pain interference, function, quality of life, and patient global change; ([NCI Cancer Pain PDQ][2]; [Endpoint consensus][28])
+- scheduled and rescue opioid exposure as a longitudinal trajectory; ([Endpoint consensus][28])
+- time to treatment failure, rotation failure, discontinuation, missing data, and reason-coded attrition; ([CONSORT 2025][29])
+- sedation, delirium, hallucinations, myoclonus, constipation, nausea, respiratory events, withdrawal, interactions, and relevant organ function; ([NCI Cancer Pain PDQ][2]; [OIN rapid review][31]; [CONSORT 2025][29])
+- cancer progression, treatment-related versus tumour-related pain, and timestamps for radiotherapy, systemic treatment, surgery, blocks, and other co-interventions; ([NCI Cancer Pain PDQ][2]; [CONSORT 2025][29])
+- a prespecified follow-up schedule long enough to test durability, justified against prognosis and participant burden. ([SPIRIT 2025][32])
+
+Possible OIH, quantitative sensory testing, and biomarkers belong as exploratory phenotypes or outcomes. NCI states that OIH clinical relevance needs further study and that there is no standard diagnostic recommendation, so these measures should not be presented as proof of diagnosis. ([NCI Cancer Pain PDQ][2])
+
+## Funding direction
+
+The immediate proposed product is protocol and feasibility information, not a claim that a therapy is already proven. A scoped planning grant could confirm a multicentre team, standardize the active comparator, test recruitment, define safety and outcome rules, coordinate with registered and published studies, and produce a protocol and defensible budget before a definitive full-rotation trial. This staged recommendation follows the feasibility limitation of the existing pilot and current SPIRIT protocol standards. ([Pilot RCT][5]; [SPIRIT 2025][32])
+
+For a funder choosing one intervention for severe pain globally, the Lancet Commission's documented access shortfall is the stronger direct suffering-reduction comparison case. Analgesic-durability research addresses a different residual problem among patients whose access is already solved but whose pain remains poorly controlled or treatment-limited. ([Lancet Commission][1]; [NCI Cancer Pain PDQ][2])
+
+*Evidence and registry status reviewed through July 15, 2026. Registry status can change and is not outcome evidence.*
+
+[1]: https://pubmed.ncbi.nlm.nih.gov/29032993/ "Lancet Commission report on the global palliative-care access abyss"
+[2]: https://www.cancer.gov/about-cancer/treatment/side-effects/pain/pain-hp-pdq "NCI Cancer Pain PDQ, health professional version"
+[3]: https://pubmed.ncbi.nlm.nih.gov/40029420/ "Opioid conversion in adults with cancer: international guideline"
+[4]: https://pubmed.ncbi.nlm.nih.gov/38788923/ "ASTRO guideline on palliative radiotherapy for symptomatic bone metastases"
+[5]: https://pubmed.ncbi.nlm.nih.gov/38980427/ "Methadone versus other opioids for refractory malignant bone pain"
+[6]: https://pubmed.ncbi.nlm.nih.gov/41511057/ "Evaluating Methadone as Treatment for Refractory Cancer-Induced Bone Pain"
+[7]: https://pubmed.ncbi.nlm.nih.gov/42009265/ "Real-World Experience With Initiating Buprenorphine in Opioid Tolerant Patients with Cancer Pain"
+[8]: https://pubmed.ncbi.nlm.nih.gov/36720398/ "Levorphanol as a second-line opioid in cancer outpatients"
+[9]: https://pubmed.ncbi.nlm.nih.gov/22965960/ "Subcutaneous ketamine in the management of cancer pain"
+[10]: https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2023.1199794/full "Pharmacological interventions for preventing opioid-induced hyperalgesia"
+[11]: https://pubmed.ncbi.nlm.nih.gov/39432726/ "Systematic review of pharmacological glial modulators for pain"
+[12]: https://www.nature.com/articles/s41586-025-09880-5 "GTP release-selective agonists prolong opioid analgesic action"
+[13]: https://pubmed.ncbi.nlm.nih.gov/15911155/ "MorphiDex double-blind controlled trials"
+[14]: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ce167984-8b9d-40b7-84ce-d0f33fff1eaa&version=11 "OLINVYK prescribing information"
+[15]: https://www.trevena.com/investors/financial-information/all-sec-filings/content/0001104659-25-003715/tm253448d1_8k.htm "Trevena Form 8-K, January 15, 2025"
+[16]: https://pmc.ncbi.nlm.nih.gov/articles/PMC6581631/ "Minocycline does not affect experimental pain"
+[17]: https://euclinicaltrials.eu/ctis-public/view/2025-522710-22-00 "MetAddon trial"
+[18]: https://pubmed.ncbi.nlm.nih.gov/41985948/ "Methadone conversion-strategy randomized trial protocol"
+[19]: https://pubmed.ncbi.nlm.nih.gov/15943961/ "Low-dose naltrexone enhances the analgesic properties of oxycodone in osteoarthritis"
+[20]: https://pmc.ncbi.nlm.nih.gov/articles/PMC4110852/ "Review of opioid formulations with sequestered naltrexone"
+[21]: https://pmc.ncbi.nlm.nih.gov/articles/PMC5654584/ "The effect of ondansetron on acute opioid tolerance after cesarean delivery"
+[22]: https://pubmed.ncbi.nlm.nih.gov/38344326/ "Intrathecal drug delivery systems for cancer pain: Ontario Health assessment"
+[23]: https://clinicaltrials.gov/study/NCT07691840 "CAREGIVER comparative intrathecal-therapy trial"
+[24]: https://clinicaltrials.gov/study/NCT04459234 "KETACANCER cohort record"
+[25]: https://pubmed.ncbi.nlm.nih.gov/40117446/ "Suzetrigine for moderate-to-severe acute pain: two phase III trials"
+[26]: https://pubmed.ncbi.nlm.nih.gov/27622550/ "Antinociceptive properties of Corydalis yanhusuo extract"
+[27]: https://pubmed.ncbi.nlm.nih.gov/41501467/ "Mimicking opioid analgesia in cortical pain circuits"
+[28]: https://pubmed.ncbi.nlm.nih.gov/41285182/ "International consensus on endpoints for palliative radiotherapy in cancer pain"
+[29]: https://pubmed.ncbi.nlm.nih.gov/40228833/ "CONSORT 2025 statement"
+[30]: https://www.cancer.gov/publications/patient-education/paincontrol.pdf "NCI Cancer Pain Control guide"
+[31]: https://pubmed.ncbi.nlm.nih.gov/41876211/ "Opioid-induced neurotoxicity in palliative medicine: rapid review"
+[32]: https://pubmed.ncbi.nlm.nih.gov/40294521/ "SPIRIT 2025 statement"
+[33]: https://doi.org/10.1016/j.jpainsymman.2025.07.006 "Buprenorphine-naloxone for chronic cancer-related pain"
+[34]: https://www.cochrane.org/evidence/CD003351_adding-ketamine-opioid-opioid-resistant-cancer-pain "Ketamine as an adjuvant to opioids for cancer pain"
+[35]: https://pubmed.ncbi.nlm.nih.gov/17157780/ "Oxytrex phase III randomized trial in chronic low back pain"
